@@ -22,11 +22,13 @@
 #     0 <= Node.val <= 9
 #     It is guaranteed that the list represents a number that does not have leading zeros.
 
+# Default ListNode Class Init from Leetcode
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
 
+# Create a function to convert a ListNode to a standard Python List
 def list_node_to_list(head):
     result = []
     current = head
@@ -35,6 +37,7 @@ def list_node_to_list(head):
         current = current.next
     return result
 
+    # Create a function to convert back a standard Python List to a ListNode
     def list_to_listnode(arr):
         if not arr:
             return None
@@ -51,11 +54,15 @@ def list_node_to_list(head):
         # Return the first real node (skipping the dummy)
         return dummy.next
 
+    # Convert both Input ListNodes into Python Lists
     l1 = list_node_to_list(l1)
     l2 = list_node_to_list(l2)
+
+    # Perform addition of the numbers and saving the answer in a Python List
     l1 = int(''.join(map(str, l1)))
     l2 = int(''.join(map(str, l2)))
     l3 = l1 + l2
     l3 = [int(x) for x in str(l3)]
 
+    # Returns the answer by converting the list in reverse format into a ListNode
     return list_to_listnode(l3[::-1])
