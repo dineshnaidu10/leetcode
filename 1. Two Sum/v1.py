@@ -4,8 +4,6 @@
 
 # You can return the answer in any order.
 
- 
-
 # Example 1:
 
 # Input: nums = [2,7,11,15], target = 9
@@ -22,8 +20,6 @@
 # Input: nums = [3,3], target = 6
 # Output: [0,1]
 
- 
-
 # Constraints:
 
 #     2 <= nums.length <= 104
@@ -31,15 +27,21 @@
 #     -109 <= target <= 109
 #     Only one valid answer exists.
 
+# Sample variables to test the function
 nums = [3,3]
 target = 6
 
 def twoSum(nums, target):
+   # Init a list variable to append the indices
    indices_list = []
 
+   # Iterate the list with index.
    for i,num in enumerate(nums):
+      # For each number, calculate the target number
       a = target - num
+      # Check if target is present in the next slice of list. Dont include current index.
       if a in nums[i+1:]:
+         # If target is present, append current index and target index into the return list
          indices_list.append(i)
          indices_list.append(nums.index(a, i+1))
 
